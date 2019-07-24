@@ -76,7 +76,7 @@
     </p>
   <p class="article-time">
     <time datetime="2019-07-15T10:53:39.000Z" itemprop="datePublished">2019-07-15</time>
-    Updated:<time datetime="2019-07-24T03:42:26.104Z" itemprop="dateModified">2019-07-24</time>
+    Updated:<time datetime="2019-07-24T06:02:49.060Z" itemprop="dateModified">2019-07-24</time>
     
   </p>
 </header>
@@ -85,7 +85,7 @@
 		
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">Contents</strong>
-		<ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#永恒之蓝（msf17-010-内网实战利用"><span class="toc-number">1.</span> <span class="toc-text">永恒之蓝（msf17-010)内网实战利用</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#0X01-扫漏洞"><span class="toc-number"></span> <span class="toc-text">0X01 扫漏洞</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#0x02-攻击"><span class="toc-number"></span> <span class="toc-text">0x02 攻击</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#0x03-后渗透攻击"><span class="toc-number"></span> <span class="toc-text">0x03 后渗透攻击</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#0x04后门"><span class="toc-number"></span> <span class="toc-text">0x04后门</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#0x05-域渗透"><span class="toc-number"></span> <span class="toc-text">0x05 域渗透</span></a>
+		<ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#永恒之蓝（msf17-010-内网实战利用"><span class="toc-number">1.</span> <span class="toc-text">永恒之蓝（msf17-010)内网实战利用</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#0X01-扫漏洞"><span class="toc-number"></span> <span class="toc-text">0X01 扫漏洞</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#0x02-攻击"><span class="toc-number"></span> <span class="toc-text">0x02 攻击</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#0x03-后渗透攻击"><span class="toc-number"></span> <span class="toc-text">0x03 后渗透攻击</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#0x04后门"><span class="toc-number"></span> <span class="toc-text">0x04后门</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#0x05-域渗透"><span class="toc-number"></span> <span class="toc-text">0x05 域渗透</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#0x06-修补与防护"><span class="toc-number"></span> <span class="toc-text">0x06 修补与防护</span></a>
 		</div>
 		
 		<blockquote>
@@ -139,7 +139,17 @@
 <h2 id="0x05-域渗透"><a href="#0x05-域渗透" class="headerlink" title="0x05 域渗透"></a>0x05 域渗透</h2><p>即使提权不成功，也可以将此作为跳板机，攻击其他主机<br>常用信息收集命令：</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">net user /domain #查看域用户</span><br><span class="line">net view /domain  #查看有几个域</span><br><span class="line">net view /domain:XXX #查看域内主机</span><br><span class="line">net group /domain #查看域里面的组</span><br><span class="line">net group "domain computers" /domain  #查看域内所有的主机名</span><br><span class="line">net group "domain admins" /domain #查看域管理员</span><br><span class="line">net group "domain controllers" /domain #查看域控制器</span><br><span class="line">net group "enterprise admin" /domain #查看企业管理组</span><br><span class="line">nettime/domain #查看时间服务器</span><br></pre></td></tr></table></figure>
 
-<p>…<br><img src="http://puof7zqrg.bkt.clouddn.com/FnPH6naRE2MZZ7py2HKE4bd1VIaG" alt="微信公众号"></p>
+<h2 id="0x06-修补与防护"><a href="#0x06-修补与防护" class="headerlink" title="0x06 修补与防护"></a>0x06 修补与防护</h2><p>补丁网址 <a href="https://docs.microsoft.com/zh-cn/security-updates/Securitybulletins/2017/ms17-010" target="_blank" rel="noopener">https://docs.microsoft.com/zh-cn/security-updates/Securitybulletins/2017/ms17-010</a><br>…实在不行 一个360全家桶就可以解决~~</p>
+<blockquote>
+<p>================================<br>关于勒索病毒防护：<br>提高安全意识，尤其是弱口令、漏洞、文件共享和远程桌面的管理，以应对勒索病毒的威胁。<br>一些建议如下：</p>
+<ol>
+<li>多台机器，不要使用相同的账号和口令</li>
+<li>登录口令要有足够的长度和复杂性，并定期更换登录口令</li>
+<li>重要资料的共享文件夹应设置访问权限控制，并进行定期备份</li>
+<li>定期检测系统和软件中的安全漏洞，及时打上补丁。</li>
+<li>定期到服务器检查是否存在异常。查看范围包括：<br>a)     是否有新增账户 （net user）<br>b)     Guest是否被启用<br>c)      Windows系统日志是否存在异常<br>d)     杀毒软件是否存在异常拦截情况<br>安装安全防护软件，并确保其正常运行.<br>从正规渠道下载安装软件。<br>对不熟悉的软件，如果已经被杀毒软件拦截查杀，不要添加信任继续运行。<br><img src="http://puof7zqrg.bkt.clouddn.com/FnPH6naRE2MZZ7py2HKE4bd1VIaG" alt="微信公众号"></li>
+</ol>
+</blockquote>
 <p><a id="jump_20">微信公众号：ethtool</a></p>
   
 	</div>
@@ -168,7 +178,7 @@
 
   <div id="toc" class="toc-aside">
   <strong class="toc-title">Contents</strong>
-  <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#永恒之蓝（msf17-010-内网实战利用"><span class="toc-number">1.</span> <span class="toc-text">永恒之蓝（msf17-010)内网实战利用</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#0X01-扫漏洞"><span class="toc-number"></span> <span class="toc-text">0X01 扫漏洞</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#0x02-攻击"><span class="toc-number"></span> <span class="toc-text">0x02 攻击</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#0x03-后渗透攻击"><span class="toc-number"></span> <span class="toc-text">0x03 后渗透攻击</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#0x04后门"><span class="toc-number"></span> <span class="toc-text">0x04后门</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#0x05-域渗透"><span class="toc-number"></span> <span class="toc-text">0x05 域渗透</span></a>
+  <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#永恒之蓝（msf17-010-内网实战利用"><span class="toc-number">1.</span> <span class="toc-text">永恒之蓝（msf17-010)内网实战利用</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#0X01-扫漏洞"><span class="toc-number"></span> <span class="toc-text">0X01 扫漏洞</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#0x02-攻击"><span class="toc-number"></span> <span class="toc-text">0x02 攻击</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#0x03-后渗透攻击"><span class="toc-number"></span> <span class="toc-text">0x03 后渗透攻击</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#0x04后门"><span class="toc-number"></span> <span class="toc-text">0x04后门</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#0x05-域渗透"><span class="toc-number"></span> <span class="toc-text">0x05 域渗透</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#0x06-修补与防护"><span class="toc-number"></span> <span class="toc-text">0x06 修补与防护</span></a>
   </div>
 
 <div id="asidepart">
